@@ -1,0 +1,28 @@
+<section class="container mt-2 mb-5 footer-margin">
+    <div id="funcionamento" class="text-center container">
+        <h4 class="background-maisescuro mb-0 titulos">HORÁRIOS</h4>
+        <h5 class="modalidade-background mb-0 pl-3 subtext" id="funcionamentoh5">FUNCIONAMENTO</h5>
+        <h3 class="background-maisescuro titulos">Das 06:00 ÀS 21:00</h3>
+    </div>
+
+    <div class="text-center">
+        <div class="container" id="modalidades">
+            <h4 class="modalidade-background mb-0 titulos">MODALIDADE</h4>
+        </div>
+        <section id="main-content" class="modalidade-background justify-content-center container">
+            <div class="container titulos" id="massagem">
+                <h3 class="background-maisescuro titulos">{{obterAtividadeDTO[indexHorario].nome}}</h3>
+            </div>
+            <div>
+                <ac-carrossel [navigationIndicator]="navigation" [images]=imagens [heightImg]=height [widthImg]=width (indexCarrosel)="indexHorario = $event">
+                </ac-carrossel>
+            </div>
+            <div id="msg-img" class="subtext">
+                {{obterAtividadeDTO[indexHorario].descricao}}
+            </div>
+            <div id="card-horario" class="background-maisescuro titulos">
+                Das {{obterAtividadeDTO[indexHorario].dataInicio.substring(14,19)}} Às {{obterAtividadeDTO[indexHorario].dataTermino.substring(14,19)}}
+            </div>
+        </section>
+    </div>
+</section>

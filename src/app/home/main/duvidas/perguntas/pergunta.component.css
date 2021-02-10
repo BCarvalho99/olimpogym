@@ -1,0 +1,14 @@
+#linhaDashed{
+    border-top: #ffffff dashed 2px;
+}
+
+.titulo{
+    background-color: #00AD90;
+    color: #ffffff;
+    padding: 3px;
+}
+
+.perguntasBackGround{
+    background-color: #034051; 
+    color: #ffffff;
+}

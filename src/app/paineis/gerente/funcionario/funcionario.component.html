@@ -1,0 +1,68 @@
+<div>
+    <ac-boxed-table>
+        <div button class="d-flex justify-content-center">
+            <ac-add-funcionario>
+                
+            </ac-add-funcionario>
+        </div>
+
+        <ac-painel-modal (content)="contentModal = $event">
+            <div modalHeader class="p-3">
+                Tem certeza que deseja excluir <span class="text-danger">{{funcionarioNome}} ?</span>
+            </div>
+            <div modalBody class="p-3 pt-4">
+                <ac-alert></ac-alert>
+            </div>
+            <div modalFooter class="p-3 pt-5 d-flex justify-content-between">
+                <div>
+                    <button (click)="closeModal()" class="btn btn-primary">
+                        Cancelar
+                    </button>
+                </div>
+                <div>
+                    <button (click)="deleteFuncionario()" class="btn btn-danger">
+                        Excluir
+                    </button>
+                </div>
+            </div>
+        </ac-painel-modal>
+
+        <div table>
+            <ac-search (onTyping)="getFuncionario($event)">
+
+            </ac-search>
+            <ac-table [qtdPerPage]="8" [pagination]="paginationFuncionarioDto" (pagePagination)="getFuncionario('', $event)">
+                <thead class="theadDarko text-dark">
+                    <tr>
+                        <th scope="col">CÓDIGO
+                            <BR>MATRICULA</th>
+                        <th scope="col">NOME</th>
+                        <th>E-MAIL</th>
+                        <th scope="col">CARGO</th>
+                        <th scope="col">EDITAR</th>
+                        <th scope="col">EXCLUIR</th>
+                    </tr>
+                </thead>
+                <tbody class="bg-white" *ngFor="let funcionario of paginationFuncionarioDto.data">
+                    <tr>
+                        <th scope="row">{{funcionario.id}}</th>
+                        <td>{{funcionario.pessoa.nome}}</td>
+                        <td>{{funcionario.pessoa.email}}</td>
+                        <td >{{getCargo(funcionario.pessoa.nivel)}}</td>
+                        <td>
+                            <ac-edit-funcionario [pagination]="pagination" (updateTableFuncionario)="paginationFuncionarioDto = $event"
+                                [obterFuncionarioDto]="obterFuncinarioEdit(funcionario.id)">
+
+                            </ac-edit-funcionario>
+                        </td>
+                        <td>
+                            <button (click)="openModal(funcionario.id)" type="button" class="btnDelete">
+                                <i class="fa fa-2x fa-user-times"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </ac-table>
+        </div>
+    </ac-boxed-table>
+</div>

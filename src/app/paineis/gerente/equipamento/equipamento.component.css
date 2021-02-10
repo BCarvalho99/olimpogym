@@ -1,0 +1,12 @@
+.caesar {
+    font-family: caesar !important
+}
+
+.fa-user-times{
+    color: red;
+}
+
+.btnDelete, .btn-edit{
+    border: none;
+    background-color: transparent;
+}

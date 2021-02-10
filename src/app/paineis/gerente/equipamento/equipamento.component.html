@@ -1,0 +1,67 @@
+<ac-painel-modal (content)="contentModal = $event">
+    <div modalHeader class="p-3">
+        Tem certeza que Deseja Excluir Equipamento
+        <span class="text-danger">
+            {{equipamentoDto?.nome}} ?
+        </span>
+    </div>
+    <div modalBody class="p-3 pt-5">
+        <ac-alert></ac-alert>
+    </div>
+    <div modalFooter class="p-3">
+        <div class="d-flex justify-content-between">
+            <div>
+                <button (click)="fecharModal()" class="btn btn-primary">
+                    Cancelar
+                </button>
+            </div>
+            <div>
+                <button (click)="delete()" class="btn btn-danger">
+                    Excluir
+                </button>
+            </div>
+        </div>
+    </div>
+</ac-painel-modal>
+<div>
+    <ac-boxed-table>
+        <div button class="d-flex justify-content-center">
+            <ac-add-equipamento></ac-add-equipamento>
+        </div>
+        <div table>
+            <ac-search (onTyping)="getEquipamento($event)">
+
+            </ac-search>
+            <ac-table [pagination]="paginationEquipamentoDto" (pagePagination)="getEquipamento('', $event)">
+                <thead class="theadDarko text-dark">
+                    <tr>
+                        <th scope="col">CÓDIGO
+                            <BR>EQUIPAMENTO</th>
+                        <th scope="col">NOME</th>
+                        <th scope="col">DESCRIÇÃO</th>
+                        <th scope="col">STATUS</th>
+                        <th scope="col">EDITAR</th>
+                        <th scope="col">EXCLUIR</th>
+                    </tr>
+                </thead>
+                <tbody class="bg-white" *ngFor="let equipamento of paginationEquipamentoDto.data">
+                    <tr>
+                        <th scope="row">{{equipamento.id}}</th>
+                        <td>{{equipamento.nome}}</td>
+                        <td>{{equipamento.descricao}}</td>
+                        <td>{{getStatusAparelho(equipamento.statusAparelho)}}</td>
+                        <td>
+                            <ac-edit-equipamento [pagination]="pagination" (EquipamentoTableUpdate)="paginationEquipamentoDto = $event" [obterEquipamentoDto]="obterEquipamentoEdit(equipamento.id)">
+                            </ac-edit-equipamento>
+                         </td>
+                         <td>
+                             <button (click)="openModal(equipamento.id)" type="button" class="btnDelete">
+                                 <i class="fa fa-2x fa-user-times"></i>
+                             </button>
+                         </td>
+                    </tr>
+                </tbody>
+            </ac-table>
+        </div>
+    </ac-boxed-table>
+</div>

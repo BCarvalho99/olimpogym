@@ -1,0 +1,34 @@
+<ac-template [titulo]="'MEUS TREINOS'">
+
+    <div *ngIf="clienteTreinos.length === 0 && !campoSearch; else mostrarTreinos">
+        <section class="bg-secondary p-5">
+            Nenhum treino foi passado até o momento. 
+            Caso tenha interesse fale com um dos nossos intrutores.
+        </section>
+    </div>
+    <ng-template #mostrarTreinos>
+        <ac-search (onTyping)="getClienteTreino($event)">
+
+        </ac-search>
+        <ac-table [pagination]="paginationObterTreinoDto" (perpage)="perpage = $event" (pagePagination)="getClienteTreino('', $event)">
+            <thead>
+                <tr>
+                    <th scope="col">EXERCICIO</th>
+                    <th scope="col">OBSERVAÇÕES</th>
+                    <th scope="col">INSTRUTOR</th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let clienteTreino of clienteTreinos">
+                <th scope="row">{{clienteTreino.nome }}</th>
+                <td>
+                    {{clienteTreino.descricao}}
+                </td>
+                <td>
+                    {{clienteTreino.funcionario.nome}}
+                </td>
+            </tr>
+        </tbody>
+        </ac-table>
+    </ng-template>
+</ac-template>

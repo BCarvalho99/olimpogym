@@ -1,0 +1,35 @@
+.login-background{
+    background-color: #04617b;
+    width: 45%;
+    border-radius: 10px;
+}
+
+.bg-titulo-login{
+    background-color: #034051;
+    color: #ffffff;
+    z-index: 1;
+    position: relative;
+}
+
+.form{
+    border: dashed 1px #00AD90;
+    color: #ffffff;
+    border-radius: 8px;
+    margin-top: -1rem;
+}
+
+.linha{
+    border: dashed 1px;
+    color: #ffffff;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.btn{
+    background-color: #034051;
+    border-color: #034051;
+    color: #ffffff;
+}
+.nav-link{
+    color: #ffffff;
+}

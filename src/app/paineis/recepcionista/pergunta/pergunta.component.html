@@ -1,0 +1,68 @@
+<div>
+    <ac-boxed-table>
+        <div button class="d-flex justify-content-center">
+            <button tableButton (click)="abrirModal()">ADICIONAR</button>
+        </div>
+        <ac-painel-modal (content)="contentModal = $event">
+            <div modalHeader class="p-3 modal-header">
+
+            </div>
+            <div modalBody class="p-3 pt-5 modal-body">
+                <form #form="ngForm" [formGroup]="perguntaGroup" (submit)="salvarDadosPergunta()">
+                    <div class="form-group row">
+                        <label for="example-text-input" class="col-2 col-form-label">Titulo</label>
+                        <div class="col-10">
+                            <input class="form-control" type="text" value="" id="example-text-input" formControlName="titulo">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleTextarea">Descrição</label>
+                        <textarea class="form-control" id="exampleTextarea" rows="3" formControlName="descricao"></textarea>
+                    </div>
+                    <div class="d-flex justify-content-end">
+                        <button type="submit" class="btn btn-primary">Salvar</button>
+                    </div>
+                </form>
+                <ac-alert></ac-alert>
+            </div>
+            <div modalFooter class="p-3 modal-footer">
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <button (click)="fecharModal()" type="button" class="btn btn-danger">
+                            Cancelar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </ac-painel-modal>
+        <div table>
+            <ac-search (onTyping)="getDuvida($event)"></ac-search>
+
+            <ac-table [pagination]="paginationObterDuvidaDto" (pagePagination)="getDuvida('', $event)">
+                <thead>
+                    <tr>
+                        <th scope="col">PERGUNTA</th>
+                        <th scope="col">RESPOSTA</th>
+                        <th scope="col">EDITAR</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let duvida of duvidas">
+                        <th scope="row">{{duvida.titulo}}</th>
+                        <td>
+                            {{duvida.descricao}}
+                        </td>
+                        <td>
+                            <ac-edit-pergunta [obterPerguntaDto]="obterPerguntaEdit(duvida.id)">
+
+                            </ac-edit-pergunta>
+                        </td>
+                    </tr>
+                </tbody>
+            </ac-table>
+        </div>
+
+
+    </ac-boxed-table>
+</div>

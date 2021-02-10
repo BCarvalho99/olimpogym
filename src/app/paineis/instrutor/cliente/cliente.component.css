@@ -1,0 +1,34 @@
+.caesar {
+    font-family: caesar !important
+}
+.romanica{
+  font-family: romanica !important;
+  text-align: center;
+  background-color: #0789b1;
+  color: #FFFF;
+  border-bottom: dashed 2px #FFF;
+
+}
+
+#btnM{
+  border: none;
+}
+.fa-plus-circle{
+  color:#2f5a58;
+} .fa-address-card{
+  color:#2f5a58;
+}
+
+#modal{
+  background-color: #077DA2;
+}
+
+.titulo{
+  font-size: 24pt;
+}
+
+.bgg{
+  font-family: romanica;
+  padding: 20px;
+  background-color: #ffff;
+}

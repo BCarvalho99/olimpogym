@@ -1,0 +1,7 @@
+<ngb-pagination 
+    [collectionSize]="obter.totalFiltered" 
+    [(page)]="obter.page" 
+    [boundaryLinks]="true"
+    [pageSize]="obter.perPage"
+    (pageChange)="getPage($event)">
+</ngb-pagination>

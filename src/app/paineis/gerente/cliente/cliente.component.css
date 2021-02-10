@@ -1,0 +1,29 @@
+.caesar {
+    font-family: caesar !important
+}
+
+.btnDelete,
+.btn-edit {
+    border: none;
+    background-color: transparent;
+}
+
+.text-danger {
+    font-size: 14pt;
+}
+
+.fa-user-times {
+    color: red;
+}
+
+.font-table {
+    font-size: 13pt;
+}
+
+.fa-users {
+    color: blue;
+}
+
+.display {
+    display: none;
+}

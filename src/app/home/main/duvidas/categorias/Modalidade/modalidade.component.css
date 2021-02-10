@@ -1,0 +1,15 @@
+.titulo{
+    background-color: #ADD8E6;
+    color: #ffffff;
+    padding: 3px;
+}
+
+input[type=radio] {
+    border: 0px;
+    width: 20%;
+    height: 1.5em;
+}
+
+.labelRadioButton{
+    color: #ffffff;
+}

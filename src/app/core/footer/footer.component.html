@@ -1,0 +1,29 @@
+<footer class="fixed-bottom">
+    <div class="container p-3" >
+        <div hideIfLogged>
+            <form #ngForm="ngForm" [formGroup]="emailGroup" (submit)="enviarEmail()">
+            <div class="row">
+                <div class="col-6 fonte-footer">REDES SOCIAIS</div>
+                <div class="col-4">
+                    <input type="text" formControlName="emailTo" class="form-control">
+                </div>
+                <div class="col-2">
+                    <input  type="submit" value="Enviar" class="btn">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <i class="fa fa-facebook mr-2 fa-2x"></i>
+                    <i class="fa fa-whatsapp ml-2 fa-2x"></i>
+                    <i class="fa fa-instagram ml-3 fa-2x"></i>
+                </div>
+                <div class="col pt-1">
+                    <label class="fonte-footer">Cadastre o e-mail para receber promoções </label>
+                </div>
+        
+            </div>
+            </form>
+        </div>
+    </div>
+</footer>

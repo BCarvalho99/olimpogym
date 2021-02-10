@@ -1,0 +1,9 @@
+<div>
+    <h5 class="m-0 titulo">
+        {{categoria}}
+    </h5>
+    <div class="d-flex justify-content pt-1" *ngFor="let modalidade of modalidades">
+        <input type="radio" [name]="categoria" id="radioButton">
+        <label class="labelRadioButton">{{modalidade}}</label>
+    </div>
+</div>

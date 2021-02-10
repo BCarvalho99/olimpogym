@@ -1,0 +1,49 @@
+.fa .fa-bars{
+    display: none;
+}
+
+@media screen and (max-width: 411px){
+    .navbar-brand{
+        display: block;
+    }
+}
+@font-face{
+    font-family: Caesar;
+    src: url("../../../assets/font/CAESAR.TTF");
+}
+
+@font-face{
+    font-family: Romanica;
+    src: url("../../../assets/font/Romanica.ttf");
+}
+
+header{
+    background-image: url("../../../assets/img/header-background.png");
+    background-position: center;
+    background-size: 40%;
+    font-family: Romanica;
+    font-weight: bold;
+    border-bottom: solid 7px #00AD90;
+    position: relative;
+    top: 0
+}
+#logoLogo{
+  height: 100%;
+}
+
+.fa-bars{
+    color: #ffffff;
+    margin-left: 10px;
+}
+
+.nav-link{
+    color: #ffffff;
+}
+
+.nav-link:hover{
+    color: #00ccdd;
+}
+
+nav ul{
+    padding: 0;
+}

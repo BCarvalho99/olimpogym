@@ -1,0 +1,12 @@
+<hr id="linhaDashed">
+<section class="perguntasBackGround mb-0" *ngFor="let duvida of obterDuvida.data">
+    <h5 class="titulo">{{duvida.titulo}}</h5>
+    <article>
+        {{duvida.descricao}}
+    </article>
+    <article class="d-flex justify-content-start pl-3 text-info">
+        <div *ngIf="duvida.resposta != null">
+            R: {{duvida.resposta}}
+        </div>
+    </article>
+</section>

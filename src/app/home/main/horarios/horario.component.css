@@ -1,0 +1,60 @@
+.modalidade-background {
+    background-color: #04617b;
+}
+
+.background-maisescuro {
+    background-color: #034051;
+    ;
+}
+
+.container {
+    color: #ffffff;
+    font-weight: 200;
+}
+
+#modalidades {
+    width: 30%;
+}
+
+#massagem {
+    width: 50%;
+}
+
+#funcionamento {
+    width: 40%;
+}
+
+#funcionamentoh5 {
+    width: 80%;
+    margin-left: 10%;
+}
+
+.footer-margin {
+    margin-bottom: 150px !important;
+}
+
+#main-content {
+    max-height: 575px;
+    max-width: 790px;
+    padding-bottom: 10px;
+}
+
+#msg-img {
+    padding: 10px;
+    font-size: 15pt;
+}
+
+#card-horario {
+    padding: 5px;
+    margin: 0 auto;
+    max-width: 330px;
+}
+
+.titulos {
+    font-family: 'caesar';
+    font-size: 25pt;
+}
+
+.subtext {
+    font-family: 'romanica';
+}

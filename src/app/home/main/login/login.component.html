@@ -1,0 +1,51 @@
+<div class="text-center mt-4 container login-background pb-3">
+    <h4 class="bg-titulo-login mb-0 p-1">Dados de Acesso</h4>
+    <form #form="ngForm" [formGroup]="loginGroup" (submit)="login()" class="form">
+        <div class="p-3 mt-2">
+            <div class="form-group row justify-content-md-center">
+              <label for="staticEmail" class="col-sm-2 col-form-label">Email:</label>
+              <div class="col-sm-10">
+                <input formControlName="email" type="text" class="form-control" id="staticEmail" placeholder="email@example.com">
+                <ac-vmessage 
+                        *ngIf="loginGroup.get('email').errors?.required && form.submitted"
+                        text="*E-mail é obrigatório">
+                </ac-vmessage>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="inputPassword" class="col-sm-2 col-form-label">Password:</label>
+              <div class="col-sm-10">
+                <input formControlName="senha" type="password" class="form-control" id="inputPassword" placeholder="**********">
+                <ac-vmessage 
+                        *ngIf="loginGroup.get('senha').errors?.required && form.submitted"
+                        text="*Senha é obrigatória">
+                </ac-vmessage>
+              </div>
+            </div>
+            <div class="d-flex justify-content-between pt-3 pb-0">
+                <div>
+                    <input type="checkbox" name="" id="">
+                    <label for="" class="pl-3">Lembrar login e senha</label>
+                </div>
+                <button type="submit" class="btn">Enviar</button>
+            </div>
+        </div>
+
+        <div class="pl-3 pr-3">
+          <ac-alert>
+                  
+          </ac-alert>
+        </div>
+
+        <hr class="linha">
+        <section class="justify-content-start">
+            <p>Ainda não possui registro ? Faça seu registro agora mesmo !</p>
+            <button type="button" class="btn ml-3 mb-2 d-flex justify-content-start p-0">
+              <a [routerLink]="['register']" class="nav-link">Registrar</a>
+            </button>
+        </section>     
+           
+      </form>
+</div>
+
+ 

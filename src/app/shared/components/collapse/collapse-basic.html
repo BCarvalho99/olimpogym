@@ -1,0 +1,8 @@
+<button type="button" class="btn" (click)="isCollapsed = !isCollapsed"
+    [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">MOSTRE-ME
+</button>
+<div id="collapseExample" [ngbCollapse]="isCollapsed">
+{{textoPlano}}
+<br>
+<div class="valorPlano">Valor mensal de apenas: <strong id="valorReal">{{valorPlano}},00</strong> R$</div>
+</div>

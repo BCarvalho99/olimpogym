@@ -1,0 +1,35 @@
+<ac-template [titulo]="'MENSALIDADE'">
+    <section class="text-left mb-3 d-flex pl-2">
+        <h3> O VALOR DO SEU PLANO ATUAL É:<span class="m-2 money-color">R${{valorPlano}},00</span> </h3>  
+    </section>
+
+    <section class="text-left mb-3 pl-2">
+        <h3>COMO DESEJA PAGAR A MENSALIDADE ?</h3>
+    </section>
+    <form class="row" [formGroup]="mensalidadeForm">
+        <div class="form-check col-md-2">
+            <input class="form-check-input" 
+                style="padding: 100px;" 
+                value="boleto"
+                type="radio" 
+                id="idBoleto"  formControlName="formPagamento" checked>
+            <label class="form-check-label ml-3" for="idBoleto">
+                BOLETO
+            </label>
+        </div>
+
+        <div class="form-check col-md-2">
+            <input class="form-check-input" 
+                [(ngModel)]="template"
+                style="padding: 100px;" 
+                type="radio" 
+                id="idCartao" value="cartao"  formControlName="formPagamento">
+            <label class="form-check-label ml-3" for="idCartao">
+                CARTÃO
+            </label>
+        </div>
+    </form>
+    <div class="d-flex justify-content-end mb-0 ">
+        <button class="btn text-white" (click)="checkFormPagamento()">PROSSEGUIR</button>
+    </div>
+</ac-template>

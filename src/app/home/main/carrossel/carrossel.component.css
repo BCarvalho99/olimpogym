@@ -1,0 +1,36 @@
+.carousel-control-prev-icon{
+  background-image: url(../../../../assets/img/carrossel/left-arrow.png);
+  width: 200px;
+  height: 200px;
+  margin-left: -30vh;
+
+}
+.carousel-control-next-icon{
+  background-image: url(../../../../assets/img/carrossel/right-arrow.png);
+  width: 200px;
+  height: 200px;
+  margin-right: -27vh;
+}
+
+.slide_img{
+  border: solid 4px #ADD8E6;
+}
+
+.carousel-indicators{
+  justify-content: start;
+  margin-left: 1.5vh;
+}
+
+.carousel-indicators li{
+background-color: #00FFDD;
+border-radius: 50%;
+width: 15px;
+height: 15px;
+}
+
+.carousel-indicators .active{
+  background-color: #fff;
+}
+
+
+

@@ -1,0 +1,23 @@
+.text-left .form-check-label{
+    font-weight: 100 !important;
+    font-family: romanica !important;
+}
+
+.btn{
+    background-color: #034051;
+    border: 1px solid aqua;
+}
+
+.money-color{
+    color: limegreen;
+    font-size: 19pt;
+}
+
+.form-check-label{
+    font-size: 16pt;
+}
+
+input[type=radio] {
+    width: 25px;
+    height: 25px;
+}

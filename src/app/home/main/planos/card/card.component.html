@@ -1,0 +1,11 @@
+<div class="card">
+  <div class="plan_bar">
+    <h3 class="name_Plan">{{paginationObterPlanoDto.data[index].nome}}</h3>>
+  </div>
+  <img [src]='img' class="card-img-top">
+  <div class="card-body">
+  <ngbd-collapse-basic [textoPlano]="paginationObterPlanoDto.data[index].descricao"
+  [valorPlano]="paginationObterPlanoDto.data[index].valor"></ngbd-collapse-basic>
+  </div>
+</div>
+

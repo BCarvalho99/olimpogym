@@ -1,0 +1,86 @@
+<div>
+    <ac-boxed-table>
+
+        <ac-painel-modal (content)="contentModal = $event">
+            <div modalHeader class="p-3">
+
+            </div>
+            <div modalBody class="p-3 pt-5">
+                <form>
+                    <div class="form-group row">
+                        <label for="example-text-input" class="col-2 col-form-label">Nome</label>
+                        <div class="col-10">
+                            <input class="form-control" type="text" value="" id="example-text-input">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleTextarea">Descrição</label>
+                        <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="example-datetime-local-input" class="col-3 col-form-label">Data e Hora - Inicio</label>
+                        <div class="col-9">
+                            <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="example-datetime-local-input">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="example-datetime-local-input" class="col-3 col-form-label">Data e Hora - Fim</label>
+                        <div class="col-9">
+                            <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="example-datetime-local-input">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleSelect2">Aparelho</label>
+                        <select multiple class="form-control" id="exampleSelect2">
+                          <option>1</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleSelect2">Funcionario</label>
+                        <select multiple class="form-control" id="exampleSelect2">
+                          <option>1</option>
+                        </select>
+                    </div>
+                    <button>Salvar</button>
+                </form>
+                <ac-alert></ac-alert>
+            </div>
+            <div modalFooter class="p-3">
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <button (click)="fecharModal()" class="btn btn-primary">
+                            Cancelar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </ac-painel-modal>
+        <div table>
+        <ac-search (onTyping)="getEquipamento($event)" ></ac-search>
+        <ac-table  [pagination]="paginationObterEquipamentoDto" (pagePagination)="getEquipamento('', $event)">
+            <thead class="theadDarko">
+                <tr>
+                    <th scope="col">NOME</th>
+                    <th scope="col">DESCRIÇÃO</th>
+                    <th scope="col">STATUS</th>
+                    <th scope="col">ALTERAR STATUS</th>
+                </tr>
+            </thead>
+            <tbody class="bg-white">
+                <tr *ngFor="let equipamento of equipamentos">
+                    <th scope="row">{{equipamento.nome}}</th>
+                    <td>
+                        {{equipamento.descricao}}
+                    </td>
+                    <td>
+                      {{getStatusAparelho(equipamento.statusAparelho)}}
+                    </td>
+                    <td><ac-edit-equipamento (EquipamentoTableUpdate)="paginationObterEquipamentoDto=$event" [obterEquipamentoDto]="obterEquipamentoEdit(equipamento.id)"></ac-edit-equipamento></td>
+                </tr>
+            </tbody>
+        </ac-table>
+      </div>
+    </ac-boxed-table>
+</div>

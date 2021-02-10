@@ -1,0 +1,24 @@
+.btn {
+    background-color: #034051;
+    color: #ffffff;
+}
+
+footer {
+    background-image: url("../../../assets/img/footer-background.png");
+    background-size: cover;
+    line-height: 10px;
+}
+
+.border-dashed {
+    border-left: dashed 2px #ffffff;
+}
+
+.fonte-footer {
+    color: #ffffff;
+}
+
+.fa-facebook,
+.fa-instagram,
+.fa-whatsapp {
+    color: #00AD90;
+}

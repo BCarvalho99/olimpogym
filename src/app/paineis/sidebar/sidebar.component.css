@@ -1,0 +1,15 @@
+.sidebar{
+    background-color: rgb(54, 84, 105);    
+    padding-bottom: 100%;
+}
+
+.sidebar-height{
+    height: 150vh; 
+    max-height: auto;
+    min-height: auto;
+}
+
+
+.sidebar-height nav{
+    height: inherit;
+}

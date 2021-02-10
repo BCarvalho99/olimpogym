@@ -1,0 +1,12 @@
+.text-white{
+    font-size: 15pt;
+}
+
+.bg-dark{
+    background-color: black !important;
+}
+
+.btn-download{
+    border: none;
+    background-color: transparent;
+}

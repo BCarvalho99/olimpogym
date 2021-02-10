@@ -1,0 +1,19 @@
+<ac-painel-modal (content)="contentModal = $event">
+    <div class="modal-header p-4" modalHeader #modal>
+    </div>
+
+    <div class="modal-body" modalBody>
+        <form action="" class="row">
+            
+        </form>
+    </div>
+    <div class="modal-footer d-flex justify-content-between" modalFooter>
+        <div>
+            <button type="submit" class="btn btn-primary">Salvar</button>
+        </div>
+        <div>
+            <button type="button" class="btn btn-danger" (click)="close()">Close</button>
+        </div>
+    </div>
+</ac-painel-modal>
+<button tableButton (click)="openModal()">EXCLUIR</button>

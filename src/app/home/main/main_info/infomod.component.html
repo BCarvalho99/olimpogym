@@ -1,0 +1,15 @@
+<div class="card mt-3">
+  <div class="pl-3 pr-3">
+    <h5 class="card-title p-1">MODALIDADES</h5>
+  </div>
+  <div class="card-body">
+    <img class="card-img-top" [src]="mod_img[index]" width="100">
+    <p class="col-md-6">
+      {{obterAulaDto[index].descricao}}
+    </p>
+    <br>
+    <div class="new-body">
+      <button class="btn" (click)="getAula()">PROXIMO</button>
+    </div>
+  </div>
+</div>

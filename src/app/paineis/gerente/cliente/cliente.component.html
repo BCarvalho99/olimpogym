@@ -1,0 +1,68 @@
+<div>
+    <ac-boxed-table>
+        <div button class="d-flex justify-content-center">
+            <ac-add-cliente></ac-add-cliente>
+        </div>
+        <ac-painel-modal (content)="contentModal = $event">
+            <div modalHeader class="p-3">
+                Tem certeza que Deseja Excluir
+                <span class="text-danger">
+                    {{obterClientDto?.pessoa.nome}} ?
+                </span>
+            </div>
+            <div modalBody class="p-3 pt-5">
+                <ac-alert></ac-alert>
+            </div>
+            <div modalFooter class="p-3">
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <button (click)="fecharModal()" class="btn btn-primary">
+                            Cancelar
+                        </button>
+                    </div>
+                    <div>
+                        <button (click)="detele()" class="btn btn-danger">
+                            Excluir
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </ac-painel-modal>
+        <div table>
+            <ac-search (onTyping)="getCliente($event)"></ac-search>
+            <ac-table [qtdPerPage]="8" [pagination]="paginationObterCliente" (pagePagination)="getCliente('', $event)">
+
+                <thead class="theadDarko text-dark">
+                    <tr>
+                        <th scope="col">CÓDIGO
+                            <BR>MATRICULA</th>
+                        <th scope="col">NOME</th>
+                        <th scope="col">EMAIL</th>
+                        <th scope="col">PLANO</th>
+                        <th scope="col">EDITAR</th>
+                        <th scope="col" class="{{display}}">EXCLUIR</th>
+                    </tr>
+                </thead>
+                <tbody class="bg-white">
+                    <tr class="font-table" *ngFor="let cliente of paginationObterCliente.data">
+                        <th scope="row">{{cliente.id}}</th>
+                        <td>{{cliente.pessoa.nome}}</td>
+                        <td>{{cliente.pessoa.email}}</td>
+                        <td>{{cliente.plano.nome}}</td>
+                        <td>
+                            <ac-edit-cliente [pagination]="pagination" (updateTableCliente)="paginationObterCliente = $event" [obterClientDto]="obterClienteEdit(cliente.id)">
+
+                            </ac-edit-cliente>
+                        </td>
+
+                        <td class="{{display}}">
+                            <button (click)="openModal(cliente.id, true)" type="button" class="btnDelete">
+                                <i class="fa fa-2x fa-user-times"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </ac-table>
+        </div>
+    </ac-boxed-table>
+</div>

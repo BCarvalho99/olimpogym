@@ -1,0 +1,9 @@
+.modal-header,
+.modal-footer {
+    background-color: #05627C;
+}
+
+.btn-edit {
+    border: none;
+    background-color: transparent;
+}

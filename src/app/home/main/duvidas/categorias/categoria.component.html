@@ -1,0 +1,18 @@
+<form #form="ngForm" [formGroup]="categoriaFormGroup" action="" class="pt-2 pb-2 ml-2" (submit)="pesquisar()">
+    <div class="d-flex">
+        <input type="text" class="form-control" formControlName="search" placeholder="PESQUISAR"> 
+        <button type="submit">
+            <img id="imgLupa"
+                src="../../../../assets/img/lupadinha_olimpo.png" 
+                alt="Lupa"
+                width="38"
+                height="42">
+        </button>
+    </div>
+</form>
+
+<div>
+    <h5 id="categoria">CATEGORIAS</h5>
+    <ac-modalidade *ngFor="let categoria of categorias" [categoria]="categoria">
+    </ac-modalidade>
+</div>

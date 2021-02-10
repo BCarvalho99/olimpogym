@@ -1,0 +1,25 @@
+<section class="container mt-2 mb-3">
+    <section class="text-center pl-2 pr-2 pb-2">
+        <div class="titulo text-center ml-1 mr-1">
+            <h4 id="perguntasFrequentes" class="mb-0">PERGUNTAS FREQUENTES</h4>
+        </div>
+        <div class="row border-dashed pt-5 pb-2 pl-2 pr-2">
+            <section class="categoria col-md-3">
+                <ac-categorias (obterDuvida)="obter = $event" [page]="obter.page">
+
+                </ac-categorias>
+            </section>
+            <section class="duvidas col-md-9">
+                <ac-perguntas [obterDuvida]="obter">
+
+                </ac-perguntas>
+                <div class="d-flex justify-content-end mt-2">
+                    <ngbd-pagination-basic [obter]="obter" (pageOutPut)="obter.page = $event">
+                    </ngbd-pagination-basic>
+                </div>
+            </section>
+        </div>
+        
+        
+    </section>
+</section>

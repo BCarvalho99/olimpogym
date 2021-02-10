@@ -1,0 +1,13 @@
+.bg-claro {
+    background-color: #077DA2;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.theadDarko {
+    background-color: #003D51;
+}
+
+.bg-escuro {
+    background-color: #05627C;
+    border-radius: 10px 10px 10px 10px;
+}

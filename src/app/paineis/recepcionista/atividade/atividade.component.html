@@ -1,0 +1,93 @@
+<div>
+    <ac-boxed-table>
+        <div button class="d-flex justify-content-center">
+            <button tableButton (click)="abrirModal()">ADICIONAR</button>
+        </div>
+
+        <ac-painel-modal (content)="contentModal = $event">
+            <div modalHeader class="p-3 modal-header">
+
+            </div>
+            <div modalBody class="p-3 pt-5 modal-body">
+                <form #form="ngForm" [formGroup]="atividadeGroup" (submit)="salvaDadosAtividade()">
+                    <div class="form-group row">
+                        <label for="example-text-input" class="col-2 col-form-label">Nome</label>
+                        <div class="col-10">
+                            <input class="form-control" type="text" id="example-text-input" formControlName="nome">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleTextarea">Descrição</label>
+                        <textarea class="form-control" id="exampleTextarea" rows="3" formControlName="descricao"></textarea>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="example-datetime-local-input" class="col-3 col-form-label">Data e Hora - Inicio</label>
+                        <div class="col-9">
+                            <input class="form-control" type="datetime-local" id="example-datetime-local-input" formControlName="dataInicio">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="example-datetime-local-input" class="col-3 col-form-label">Data e Hora - Fim</label>
+                        <div class="col-9">
+                            <input class="form-control" type="datetime-local" id="example-datetime-local-input-end" formControlName="dataTermino">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleSelect2">Aparelho</label>
+                        <select multiple class="form-control" id="exampleSelect2" formControlName="aparelhoId">
+                          <option [value]="equipamento.id" *ngFor="let equipamento of equipamentoDto">{{equipamento.nome}}</option>
+                        </select>
+                    </div>
+                    <div class="d-flex justify-content-end">
+                        <button type="submit" class="btn btn-primary">Salvar</button>
+                    </div>
+                </form>
+                <ac-alert></ac-alert>
+            </div>
+            <div modalFooter class="p-3 modal-footer">
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <button class="btn btn-danger" (click)="fecharModal()">
+                            Cancelar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </ac-painel-modal>
+        <div table>
+
+            <ac-search (onTyping)="getAtividade($event)"></ac-search>
+
+            <ac-table [pagination]="paginationObterAtividadeDto" (pagePagination)="getAtividade('',$event)">
+                <thead>
+                    <tr>
+                        <th scope="col">ATIVIDADE</th>
+                        <th scope="col">DESCRIÇÃO</th>
+                        <th scope="col">EQUIPAMENTO</th>
+                        <th scope="col">EDITAR</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let atividade of atividades">
+                        <th scope="row">{{atividade.nome}}</th>
+                        <td>
+                            {{atividade.descricao}}
+                        </td>
+                        <td>
+                            {{atividade.aparelho.nome}}
+                        </td>
+                        <td>
+                            <ac-edit-atividade [pagination]="pagination" (updateTableAtividade)="atividades = $event.data" [obterEquipamentosDto]="equipamentoDto" [obterAtividadeDto]="obterAtividadeEdit(atividade.id)">
+
+                            </ac-edit-atividade>
+                        </td>
+                    </tr>
+                </tbody>
+            </ac-table>
+        </div>
+
+
+    </ac-boxed-table>
+</div>

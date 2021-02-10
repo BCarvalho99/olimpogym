@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+
+body,
+html {
+    height: 100%;
+    background-image: url(./assets/img/ac_background/MarmoreBackground.png);
+    background-size: 60%;
+    overflow-x: hidden;
+}
+
+.fa-pencil {
+    color: blue;
+}

@@ -1,0 +1,12 @@
+.boxPanelContent {
+    background-color: #00617D;
+    word-break: keep-all;
+}
+
+.titulos {
+    font-size: 30px;
+}
+
+#tmValorTotal {
+    font-size: 50px;
+}

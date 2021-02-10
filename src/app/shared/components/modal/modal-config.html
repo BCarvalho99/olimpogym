@@ -1,0 +1,27 @@
+<ng-template #longContent let-modal>
+  <div class="modal-header m-2 bg-verde">
+    <h4 class="modal-title text-white">{{modalTitle}}</h4>
+  </div>
+  <div class="modal-body text-white {{bgClassBody}}">
+    <ng-content>
+
+    </ng-content>
+  </div>
+  <div class="modal-footer row">
+    <div *ngIf="showLink==0; else btnI"> <button type="button" class="btn {{btnClass}}" (click)="modal.close
+        ('Close click')">{{buttonModal}}</button>
+    </div>
+    <ng-template class="" #btnI>
+      <div class="col-md-8"><button class=" btn btn-primary" (click)="getNextItem()">PRÓXIMO</button></div>
+      <div class="col-md-3"><button class=" btn btn-danger" (click)="modal.close
+            ('Close click')">FECHAR</button></div>
+
+    </ng-template>
+  </div>
+</ng-template>
+<div *ngIf="showLink==0;else mostraLink">
+  <button class="btn {{btnModal}}" (click)="openScrollableContent(longContent)">{{textButton}}</button>
+</div>
+<ng-template #mostraLink>
+  <a class="text-white" (click)="openScrollableContent(longContent)">Saiba Mais..</a>
+</ng-template>

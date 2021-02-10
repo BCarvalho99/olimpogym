@@ -1,0 +1,42 @@
+<section class="row">
+    <div class="col-md-3">
+        <ac-sidebar>
+            <li class="nav-item">
+                <a class="nav-link" (click)="inicio()">
+               Inicio
+             </a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link " [routerLink]="[ 'aluno'] ">
+               Alunos
+             </a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link " [routerLink]="[ 'funcionario'] ">
+               Funcionarios
+             </a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link " [routerLink]="[ 'equipamento'] ">
+               Equipamentos
+             </a>
+            </li>
+            <li class="nav-item {{showReport}}">
+                <a class="nav-link " [routerLink]="[ 'relatorio'] ">
+               Relatorios
+             </a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link " [routerLink]="[ 'home'] " (click)="logout() ">
+                  Sair
+                </a>
+            </li>
+        </ac-sidebar>
+    </div>
+    <div class="col-md-9 ">
+        <div class="container ">
+            <ac-painel></ac-painel>
+        </div>
+
+    </div>
+</section>

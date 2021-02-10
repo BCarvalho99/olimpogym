@@ -1,0 +1,41 @@
+<ac-template [titulo]="titulo">
+    <section class="bg-escuro p-4 rounded">
+        <p class="d-flex justify-content-start">Olá,<strong class="user-name">{{userName}} </strong></p>
+        <article>
+            <div class="row">
+                <p class="col-md-12">
+                    Seja bem-vindo a sua área. Aqui você pode administrar as suas atividades sem muitas dificuldades e acompanhar todas as aulas em andamento.
+
+                </p>
+                <p class="col-md-12">
+                    Para dúvidas, consulte a area principal do nosso site.
+                </p>
+            </div>
+        </article>
+        <ngbd-modal-options
+            [textButton]="textButton"
+            [modalTitle]="modalTitle"
+            [buttonModal]="buttonModal"
+            [btnClass]="'bg-verde text-white'"
+            [bgClassBody]="'bg-verde m-2'"
+            [btnModal]="'btn-aulasandamento'">
+            <div class="p-4" *ngIf="obterAulaDto.length == 0; else mostrarAulas">
+                Nenhum em andamento no momento.
+            </div>
+            <ng-template #mostrarAulas>
+                <div  *ngFor="let aula of obterAulaDto">
+                    <div class="text-center">
+                        <p>{{aula.nome}}</p>
+                    </div>
+                    <div class="text-center">
+                        <p>Com o professor, <span class="color-font">César Pavielo</span></p>
+                    </div>
+                    <div>
+                        <li>COMEÇOU: <span class="color-font">{{aula.horario}}</span></li>
+                        <li>TERMINA AS: <span class="color-font">{{aula.horario}}</span></li>
+                    </div>
+                </div>
+            </ng-template>
+        </ngbd-modal-options>
+    </section>
+</ac-template>

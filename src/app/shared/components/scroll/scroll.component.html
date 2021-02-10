@@ -1,0 +1,9 @@
+<div class="content-container" fxLayout="column" fxLayoutAlign="stretch" fxFlex="auto">
+    <perfect-scrollbar *ngIf="type === 'component'" class="scroll-container" fxFlex="auto" [config]="config"
+        [scrollIndicators]="true" (psXReachEnd)="onScrollEvent($event)" (psYReachEnd)="onScrollEvent($event)"
+        (psXReachStart)="onScrollEvent($event)" (psYReachStart)="onScrollEvent($event)">
+        <ng-content>
+
+        </ng-content>
+    </perfect-scrollbar>
+</div>

@@ -1,0 +1,27 @@
+.categoria{
+    background-color: #034051;
+}
+
+.titulo{
+    background-color: #034051;  
+    color: #ffffff;
+    z-index: 1;
+    position: relative;
+    padding-top: 3px;
+    padding-bottom: 2px;
+    
+}
+
+#perguntasFrequentes{
+    font-size: 20pt;
+}
+
+.container{
+    background-color: #04617b;
+    width: 70%;
+}
+
+.border-dashed{
+    margin-top: -20px;
+    border: dashed 1px #0ad7ba;
+}

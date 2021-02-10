@@ -1,0 +1,13 @@
+.caesar {
+    font-family: caesar !important
+}
+
+.btn-edit {
+    border: none;
+    background-color: transparent;
+}
+
+.modal-header,
+.modal-footer {
+    background-color: #05627C;
+}

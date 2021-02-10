@@ -1,0 +1,101 @@
+<div>
+  <ac-painel-modal (content) = "contentModal = $event">
+    <div modalHeader class="p-3 romanica">
+      <h1 class="titulo">ADICIONAR FICHA DE TREINO</h1>
+    </div>
+
+
+    <div modalBody class="p-3 pt-5" id="modal">
+      <div class="bgg">
+        <form (submit)='salvarTreino()' #form='ngForm' [formGroup]='treinoGroup'>
+            <div class="form-group row">
+                <label for="example-text-input" class="col-2 col-form-label"><strong>Objetivo:</strong></label>
+                <div class="col-10">
+                    <input formControlName='nome' class="form-control" type="text" value="" id="example-text-input">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleTextarea"><strong>Descrição de treino:</strong></label>
+                <textarea formControlName='descricao' class="form-control" id="exampleTextarea" rows="3"></textarea>
+            </div>
+            <div class="d-flex justify-content-between">
+
+              <button (click)="closeModal()" class="btn btn-danger">Fechar</button>
+              <button type="submit" class="btn btn-info">Salvar</button>
+
+            </div>
+
+
+          </form>
+        </div>
+          <ac-alert></ac-alert>
+        </div>
+
+  </ac-painel-modal>
+
+  <!-- MODAL DOIS -->
+
+  <ac-painel-modal (content) = "contentVisuModal = $event">
+    <div modalHeader class="p-3 romanica">
+      <h1 class="titulo">VISUALIZAR FICHA DE TREINO</h1>
+    </div>
+
+
+    <div modalBody class="p-3 pt-5" id="modal">
+      <div class="bgg">
+        <form>
+            <div class="form-group row">
+                <label for="example-text-input" class="col-2 col-form-label"><strong>Objetivo:</strong></label>
+                <div class="col-10">
+                    <input class="form-control" type="text" [value]="treinos?.nome" disabled id="example-text-input">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleTextarea"><strong>Descrição de treino:</strong></label>
+                <textarea class="form-control" [value]="treinos?.descricao" id="exampleTextarea" disabled rows="3"></textarea>
+            </div>
+            <div class="d-flex justify-content-end">
+              <button (click)="closeModal()" class="btn btn-danger">Fechar</button>
+            </div>
+
+
+          </form>
+        </div>
+          <ac-alert></ac-alert>
+        </div>
+
+  </ac-painel-modal>
+
+  <!--FIM MODAL-->
+
+  <ac-boxed-table>
+    <div table>
+      <ac-search (onTyping)="getCliente($event)" ></ac-search>
+    <ac-table  (pagePagination)="getCliente('', $event)" [pagination]="clientes">
+
+      <thead class="theadDarko">
+        <tr>
+            <th scope="col">MATRICULA</th>
+            <th scope="col">NOME</th>
+            <th scope="col">TREINO</th>
+        </tr>
+    </thead>
+    <tbody class="bg-white">
+        <tr *ngFor="let cliente of clientes.data">
+            <th scope="row">{{cliente.pessoa.id}}</th>
+            <td>
+                {{cliente.pessoa.nome}}
+            </td>
+            <td>
+              <button id = "btnM"(click) = "openModal(cliente.pessoa.id)"><i class="fa fa-2x fa-plus-circle"></i></button>
+              <button id = "btnM"(click) = "openModalVisu(cliente.pessoa.id)"><i class="fa fa-2x fa-address-card"></i></button>
+          </td>
+        </tr>
+    </tbody>
+
+    </ac-table>
+    </div>
+  </ac-boxed-table>
+</div>

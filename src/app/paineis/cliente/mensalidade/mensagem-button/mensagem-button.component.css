@@ -1,0 +1,21 @@
+.border-money{
+    border: 1px dashed #fff;
+}
+
+.bg-money{
+    background-color: #02816C;
+}
+
+.btn-mensalidade{
+    border: none;
+    border-radius: 5px;
+    padding: 7px 20px;
+    width: 14%;
+    color: #fff;
+    background: rgb(5,67,89);
+    background: linear-gradient(90deg, rgba(5,67,89,1) 0%, rgba(7,96,122,1) 50%, rgba(5,67,89,1) 100%);
+}
+
+.size-font{
+    font-size: 28pt;
+}

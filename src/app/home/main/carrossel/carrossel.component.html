@@ -1,0 +1,10 @@
+<div class="container pt-2 text-center">
+    <ngb-carousel [showNavigationIndicators]="navigationIndicator" #carousel [interval]="4700" [pauseOnHover]="pauseOnHover" (slide)="onSlide($event)" >
+        <ng-template ngbSlide *ngFor="let img of images; index as i">
+            <div class="picsum-img-wrapper" (ind)=i >
+                <img class="slide_img" [src]="img" [height]="heightImg" [width]="widthImg">
+            </div>
+        </ng-template>
+    </ngb-carousel>
+</div>
+

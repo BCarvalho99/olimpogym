@@ -1,0 +1,16 @@
+<table class="table table-striped bg-white">
+    <ng-content>
+
+    </ng-content>
+</table>
+
+<div class="d-flex justify-content-between p-2">
+    <ngbd-pagination-basic [obter]="pagination" (pageOutPut)="refreshCountries($event)">
+
+    </ngbd-pagination-basic>
+    <select class="custom-select" style="width: auto" [(ngModel)]="qtdPerPage" (ngModelChange)="refreshCountries()">
+        <option [ngValue]="4">4 items por página</option>
+        <option [ngValue]="8">8 items por página</option>
+        <option [ngValue]="10">10 items por página</option>
+    </select>
+</div>

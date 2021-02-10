@@ -1,0 +1,9 @@
+<div class="row mb-2">
+    <label class="col-sm-1 filtro text-white" for="">Filtro: </label>
+    <div class="col-md-3">
+        <input (keyup)="debounce.next($event.target.value)" type="text" class="form-control" type="search">
+    </div>
+    <div>
+        <span class="loading text-white" *ngIf="searchService.loading$ | async">Pesquisando...</span>
+    </div>
+</div>
